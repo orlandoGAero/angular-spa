@@ -1,0 +1,36 @@
+<h1 class="text-center bg-secondary p-2 text-white">{{ heroe.nombre | uppercase }} <br/><small>({{ heroe.aparicion | date:'y' }})</small></h1>
+<hr>
+
+<div class="row animated fast fadeIn">
+  <div class="col-12 col-md-5">
+    <img class="img-fluid" [src]="heroe.img" [alt]="heroe.nombre"/>
+    <div class="row d-flex mt-3 justify-content-center">
+        <div class="col-12 col-md-5">
+          <img *ngIf="heroe.casa == 'DC'" class="img-fluid" src="assets/img/logo-dc.png" [alt]="heroe.casa"/>
+          <img *ngIf="heroe.casa == 'Marvel'" class="img-fluid" src="assets/img/logo-marvel.png" [alt]="heroe.casa"/>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-outline-danger btn-block mt-3" [routerLink]="['/heroes']">
+          Regresar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-7 mt-2 d-flex justify-content-center align-items-center">
+      <div       
+          class="card bg-light mb-3 shadow p-3 mb-5 rounded" 
+          style="max-width: 20rem; font-size: 1.2rem;">
+        <div class="card-header text-center h2 font-weight-bold">{{ heroe.nombre | lowercase}}</div>
+        <div class="card-body">
+            <p class="card-text">{{ heroe.bio }}</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+
